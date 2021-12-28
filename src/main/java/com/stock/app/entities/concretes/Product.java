@@ -18,7 +18,7 @@ public class Product {
     private int id;
     private String name;
     private int min_quantity;
+    private int stock_quantity;
     private String barcode;
     private String description;
-
 }
