@@ -1,13 +1,12 @@
 package com.stock.app.business.abstracts;
 
+import com.stock.app.core.results.Result;
 import com.stock.app.entities.concretes.Fashion;
 
-import java.util.List;
-
 public interface FashionService {
-    List<Fashion> getAll();
-    Fashion addFashion(Fashion fashion);
-    Fashion displayFashion(int id);
-    String deleteFashion(int id);
-    Fashion updateFashion(Fashion fashion);
+    Result getAll();
+    Result addFashion(Fashion fashion);
+    Result displayFashion(int id);
+    Result deleteFashion(int id);
+    Result updateFashion(Fashion fashion);
 }

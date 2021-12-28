@@ -1,10 +1,9 @@
 package com.stock.app.business.concretes;
 
 import com.stock.app.business.abstracts.ZReportService;
-import com.stock.app.dataAccess.VendorDao;
+import com.stock.app.core.results.Result;
 import com.stock.app.dataAccess.ZReportDao;
 import com.stock.app.entities.concretes.Bill;
-import com.stock.app.entities.concretes.ZReport;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,32 +18,32 @@ public class ZReportManager implements ZReportService {
     }
 
     @Override
-    public ZReport displayZReportDaily() {
+    public Result displayZReportDaily() {
         return null;
     }
 
     @Override
-    public ZReport displayZReportMonthly() {
+    public Result displayZReportMonthly() {
         return null;
     }
 
     @Override
-    public String extractToExcel() {
+    public Result extractToExcel() {
         return null;
     }
 
     @Override
-    public String extractToPDF() {
+    public Result extractToPDF() {
         return null;
     }
 
     @Override
-    public boolean isProfit() {
-        return false;
+    public Result isProfit() {
+        return null;
     }
 
     @Override
-    public ZReport insertZReport(Bill bill) {
+    public Result insertZReport(Bill bill) {
         return null;
     }
 }

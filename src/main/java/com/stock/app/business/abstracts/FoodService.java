@@ -1,13 +1,13 @@
 package com.stock.app.business.abstracts;
 
+import com.stock.app.core.results.Result;
 import com.stock.app.entities.concretes.Food;
 
-import java.util.List;
 
 public interface FoodService {
-    List<Food> getAll();
-    Food addFood(Food food);
-    Food displayFood(int id);
-    String deleteFood(int id);
-    Food updateFood(Food food);
+    Result getAll();
+    Result addFood(Food food);
+    Result displayFood(int id);
+    Result deleteFood(int id);
+    Result updateFood(Food food);
 }
