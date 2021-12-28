@@ -9,8 +9,8 @@ import java.util.ArrayList;
 
 public interface VendorService {
     Result addVendor(Vendor vendor);
-    Result listPurchases();
+    Result listPurchases(int id);
     Result displayVendor(int id);
     Result deleteVendor(int id);
-    Result updateVendor(int id, String name, String company_name, String address, String cell_phone, String email);
+    Result updateVendor(Vendor vendor);
 }

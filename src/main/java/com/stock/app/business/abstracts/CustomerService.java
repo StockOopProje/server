@@ -8,8 +8,8 @@ import java.util.ArrayList;
 
 public interface CustomerService {
     Result addCustomer(Customer customer);
-    Result listSales();
+    Result listSales(int id);
     Result displayCustomer(int id);
     Result deleteCustomer(int id);
-    Result updateCustomer(int id, String name, String company_name, String address, String cell_phone, String email);
+    Result updateCustomer(Customer customer);
 }
