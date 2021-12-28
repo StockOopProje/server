@@ -3,11 +3,9 @@ package com.stock.app.business.abstracts;
 import com.stock.app.entities.concretes.Product;
 import com.stock.app.entities.concretes.Sale;
 
+import java.util.List;
+
 public interface ProductService {
-    Product addProduct(Product product);
+    List<Product> getAll();
     boolean isEnoughStock(Sale sale);
-    Product searchProduct();
-    Product displayProduct(int id);
-    String deleteProduct(int id);
-    Product updateProduct(int id, String name, int min_quantity, String barcode, String description);
 }
