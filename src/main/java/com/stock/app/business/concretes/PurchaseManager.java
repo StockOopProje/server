@@ -1,6 +1,7 @@
 package com.stock.app.business.concretes;
 
 import com.stock.app.business.abstracts.PurchaseService;
+import com.stock.app.core.results.Result;
 import com.stock.app.dataAccess.CustomerDao;
 import com.stock.app.dataAccess.PurchaseDao;
 import com.stock.app.entities.concretes.Product;
@@ -18,7 +19,7 @@ public class PurchaseManager implements PurchaseService {
     }
 
     @Override
-    public Product purchaseProduct(Product product) {
+    public Result purchaseProduct(Product product) {
         //-------------
         return null;
     }

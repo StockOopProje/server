@@ -1,14 +1,15 @@
 package com.stock.app.business.concretes;
 
 import com.stock.app.business.abstracts.ProductService;
+import com.stock.app.core.results.ErrorResult;
+import com.stock.app.core.results.Result;
+import com.stock.app.core.results.SuccessDataResult;
+import com.stock.app.core.results.SuccessResult;
 import com.stock.app.dataAccess.ProductDao;
-import com.stock.app.entities.concretes.Food;
 import com.stock.app.entities.concretes.Product;
-import com.stock.app.entities.concretes.Sale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -22,14 +23,18 @@ public class ProductManager implements ProductService {
     }
 
     @Override
-    public List<Product> getAll() {
-        return productDao.findAll();
+    public Result getAll() {
+        return new SuccessDataResult<List<Product>>(productDao.findAll());
     }
 
 
     @Override
-    public boolean isEnoughStock(Sale sale) {
-        return false;
+    public Result isEnoughStock(int id) {
+        Product product = productDao.getById(id);
+        if(product.getMin_quantity() > product.getStock_quantity()){
+            return new ErrorResult();
+        }
+        return new SuccessResult();
     }
 
 }

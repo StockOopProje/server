@@ -1,6 +1,7 @@
 package com.stock.app.api.controllers;
 
 import com.stock.app.business.abstracts.ProductService;
+import com.stock.app.core.results.Result;
 import com.stock.app.entities.concretes.Product;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +18,7 @@ public class ProductController {
     private ProductService productService;
 
     @GetMapping(path="/getAll")
-    public List<Product> getAll(){
+    public Result getAll(){
         return productService.getAll();
     }
 }

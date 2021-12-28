@@ -1,13 +1,13 @@
 package com.stock.app.business.abstracts;
 
+import com.stock.app.core.results.Result;
 import com.stock.app.entities.concretes.Furniture;
 
-import java.util.List;
 
 public interface FurnitureService {
-    List<Furniture> getAll();
-    Furniture addFurniture(Furniture furniture);
-    Furniture displayFurniture(int id);
-    String deleteFurniture(int id);
-    Furniture updateFurniture(Furniture furniture);
+    Result getAll();
+    Result addFurniture(Furniture furniture);
+    Result displayFurniture(int id);
+    Result deleteFurniture(int id);
+    Result updateFurniture(Furniture furniture);
 }

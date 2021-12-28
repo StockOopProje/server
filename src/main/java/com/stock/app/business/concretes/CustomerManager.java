@@ -1,6 +1,9 @@
 package com.stock.app.business.concretes;
 
 import com.stock.app.business.abstracts.CustomerService;
+import com.stock.app.core.results.Result;
+import com.stock.app.core.results.SuccessDataResult;
+import com.stock.app.core.results.SuccessResult;
 import com.stock.app.dataAccess.CustomerDao;
 import com.stock.app.entities.concretes.Customer;
 import com.stock.app.entities.concretes.Product;
@@ -21,25 +24,25 @@ public class CustomerManager implements CustomerService {
     }
 
     @Override
-    public ArrayList<Product> listSales() {
+    public Result listSales() {
         //--------------------
         return null;
     }
 
     @Override
-    public Customer displayCustomer(int id) {
+    public Result displayCustomer(int id) {
         //--------------
         return null;
     }
 
     @Override
-    public String deleteCustomer(int id) {
+    public Result deleteCustomer(int id) {
         this.customerDao.deleteById(id);
-        return "Basarili";
+        return new SuccessResult();
     }
 
     @Override
-    public Customer updateCustomer(int id, String name, String company_name, String address, String cell_phone, String email) {
+    public Result updateCustomer(int id, String name, String company_name, String address, String cell_phone, String email) {
         Customer customer;
         customer = this.customerDao.getById(id);
 
@@ -51,14 +54,14 @@ public class CustomerManager implements CustomerService {
             customer.setEmail(email);
             this.customerDao.save(customer);
         }
-        return customer;
+        return new SuccessDataResult<Customer>(customer);
     }
 
     @Override
-    public Customer addCustomer(Customer customer) {
+    public Result addCustomer(Customer customer) {
 
         this.customerDao.save(customer);
 
-        return customer;
+        return new SuccessDataResult<Customer>(customer);
     }
 }

@@ -1,13 +1,14 @@
 package com.stock.app.business.concretes;
 
 import com.stock.app.business.abstracts.VendorService;
+import com.stock.app.core.results.Result;
+import com.stock.app.core.results.SuccessDataResult;
+import com.stock.app.core.results.SuccessResult;
 import com.stock.app.dataAccess.VendorDao;
-import com.stock.app.entities.concretes.Product;
 import com.stock.app.entities.concretes.Vendor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Objects;
 
 @Service
@@ -21,25 +22,25 @@ public class VendorManager implements VendorService {
     }
 
     @Override
-    public ArrayList<Product> listPurchases() {
+    public Result listPurchases() {
         //--------------------
         return null;
     }
 
     @Override
-    public Vendor displayVendor(int id) {
+    public Result displayVendor(int id) {
         //--------------
         return null;
     }
 
     @Override
-    public String deleteVendor(int id) {
+    public Result deleteVendor(int id) {
         this.vendorDao.deleteById(id);
-        return "Basarili";
+        return new SuccessResult();
     }
 
     @Override
-    public Vendor updateVendor(int id, String name, String company_name, String address, String cell_phone, String email) {
+    public Result updateVendor(int id, String name, String company_name, String address, String cell_phone, String email) {
         Vendor vendor;
         vendor = this.vendorDao.getById(id);
 
@@ -51,15 +52,15 @@ public class VendorManager implements VendorService {
             vendor.setEmail(email);
             this.vendorDao.save(vendor);
         }
-        return vendor;
+        return new SuccessDataResult<Vendor>(vendor);
     }
 
     @Override
-    public Vendor addVendor(Vendor vendor) {
+    public Result addVendor(Vendor vendor) {
 
         this.vendorDao.save(vendor);
 
-        return vendor;
+        return new SuccessDataResult<Vendor>(vendor);
     }
 }
 

@@ -1,6 +1,8 @@
 package com.stock.app.business.abstracts;
 
+import com.stock.app.core.results.Result;
+
 public interface ControlService {
-    boolean checkEMail();
-    boolean checkCellPhone();
+    Result checkEMail();
+    Result checkCellPhone();
 }

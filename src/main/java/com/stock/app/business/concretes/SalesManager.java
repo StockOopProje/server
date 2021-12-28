@@ -1,6 +1,7 @@
 package com.stock.app.business.concretes;
 
 import com.stock.app.business.abstracts.SalesService;
+import com.stock.app.core.results.Result;
 import com.stock.app.dataAccess.PurchaseDao;
 import com.stock.app.dataAccess.SaleDao;
 import com.stock.app.entities.concretes.Product;
@@ -18,7 +19,7 @@ public class SalesManager implements SalesService {
     }
 
     @Override
-    public Product saleProduct(Product product) {
+    public Result saleProduct(Product product) {
         //------------
         return null;
     }
