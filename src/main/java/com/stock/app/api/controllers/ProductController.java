@@ -7,8 +7,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
-
 @RestController
 @RequestMapping(path="/api/product")
 @RequiredArgsConstructor
@@ -20,5 +18,9 @@ public class ProductController {
     @GetMapping(path="/getAll")
     public Result getAll(){
         return productService.getAll();
+    }
+
+    public Result isEnoughStock(@RequestBody Product product){
+        return productService.isEnoughStock(product.getId());
     }
 }
