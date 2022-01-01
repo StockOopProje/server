@@ -16,6 +16,7 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+    private String product_type;
     private String name;
     private int min_quantity;
     private int stock_quantity;

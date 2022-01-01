@@ -3,6 +3,7 @@ package com.stock.app.entities.concretes;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import lombok.RequiredArgsConstructor;
 
 import javax.persistence.Entity;
 import java.util.Date;
