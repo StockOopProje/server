@@ -8,6 +8,8 @@ import com.stock.app.entities.concretes.Sale;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class SaleManager implements SaleService {
     private SaleDao salesDao;
@@ -16,6 +18,11 @@ public class SaleManager implements SaleService {
     public SaleManager(SaleDao salesDao) {
         super();
         this.salesDao = salesDao;
+    }
+
+    @Override
+    public Result getAll() {
+        return new SuccessDataResult<List<Sale>>(salesDao.findAll());
     }
 
     @Override

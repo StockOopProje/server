@@ -5,11 +5,9 @@ import com.stock.app.core.results.Result;
 import com.stock.app.entities.concretes.Vendor;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping(path="/api/vendor")
 @RequiredArgsConstructor
@@ -17,6 +15,11 @@ public class VendorController {
 
     @Autowired
     private VendorService vendorService;
+
+    @GetMapping(path="/getAll")
+    public Result getAll(){
+        return vendorService.getAll();
+    }
 
     @PostMapping(path="/addVendor")
     public Result addVendor(@RequestBody Vendor vendor){

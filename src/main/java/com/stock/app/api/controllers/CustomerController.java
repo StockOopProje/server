@@ -5,11 +5,9 @@ import com.stock.app.core.results.Result;
 import com.stock.app.entities.concretes.Customer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin(origins = "*", allowedHeaders = "*")
 @RestController
 @RequestMapping(path="/api/customer")
 @RequiredArgsConstructor
@@ -17,6 +15,9 @@ public class CustomerController {
 
     @Autowired
     private CustomerService customerService;
+
+    @GetMapping(path="/getAll")
+    public Result getAll(){return customerService.getAll();}
 
     @PostMapping(path="/addCustomer")
     public Result addCustomer(@RequestBody Customer customer){

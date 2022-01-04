@@ -18,8 +18,7 @@ public class Bill {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
-    @ManyToOne()
-    @JoinColumn(name="product_id")
+    @ManyToOne
     private Product product;
     private long quantity;
     private Date date;

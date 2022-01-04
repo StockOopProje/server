@@ -4,5 +4,6 @@ import com.stock.app.core.results.Result;
 import com.stock.app.entities.concretes.Purchase;
 
 public interface PurchaseService {
+    Result getAll();
     Result purchaseProduct(Purchase purchase);
 }

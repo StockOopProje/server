@@ -14,7 +14,6 @@ import javax.persistence.ManyToOne;
 @Entity(name="Sale")
 public class Sale extends Bill{
 
-    @JoinColumn(name="customer_id")
-    @ManyToOne()
+    @ManyToOne
     private Customer customer;
 }

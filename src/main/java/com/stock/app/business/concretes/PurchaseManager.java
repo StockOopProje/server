@@ -10,6 +10,8 @@ import com.stock.app.entities.concretes.Purchase;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class PurchaseManager implements PurchaseService {
     private PurchaseDao purchaseDao;
@@ -18,6 +20,11 @@ public class PurchaseManager implements PurchaseService {
     public PurchaseManager (PurchaseDao purchaseDao) {
         super();
         this.purchaseDao = purchaseDao;
+    }
+
+    @Override
+    public Result getAll() {
+        return new SuccessDataResult<List<Purchase>>(purchaseDao.findAll());
     }
 
     @Override

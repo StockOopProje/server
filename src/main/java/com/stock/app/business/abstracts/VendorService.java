@@ -8,6 +8,7 @@ import com.stock.app.entities.concretes.Vendor;
 import java.util.ArrayList;
 
 public interface VendorService {
+    Result getAll();
     Result addVendor(Vendor vendor);
     Result listPurchases(int id);
     Result displayVendor(int id);

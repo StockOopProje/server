@@ -34,6 +34,11 @@ public class CustomerManager implements CustomerService {
     }
 
     @Override
+    public Result getAll() {
+        return new SuccessDataResult<List<Customer>>(customerDao.findAll());
+    }
+
+    @Override
     public Result addCustomer(Customer customer) {
         if(!controlAdapter.checkCellPhoneAndEmail(customer.getCell_phone(),customer.getEmail())){
             return new ErrorResult();

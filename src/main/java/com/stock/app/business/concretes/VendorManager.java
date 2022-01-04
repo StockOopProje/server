@@ -30,6 +30,11 @@ public class VendorManager implements VendorService {
     }
 
     @Override
+    public Result getAll() {
+        return new SuccessDataResult<List<Vendor>>(vendorDao.findAll());
+    }
+
+    @Override
     public Result addVendor(Vendor vendor) {
         if(!controlAdapter.checkCellPhoneAndEmail(vendor.getCell_phone(),vendor.getEmail())){
             return new ErrorResult();
