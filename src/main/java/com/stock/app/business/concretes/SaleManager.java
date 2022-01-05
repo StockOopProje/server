@@ -32,14 +32,15 @@ public class SaleManager implements SaleService {
 
     @Override
     public Result saleProduct(Sale sale) {
-        if(sale.getProduct().getStock_quantity() - sale.getQuantity() < 0){
+        Product product = productDao.getById(sale.getProduct().getId());
+        if(product.getStock_quantity() - sale.getQuantity() < 0){
             return new ErrorResult("Not enough stock");
         }
-        sale.getProduct().setStock_quantity(sale.getProduct().getStock_quantity() - sale.getQuantity());
         salesDao.save(sale);
-        Product product = productDao.getById(sale.getProduct().getId());
-        product.setStock_quantity(sale.getProduct().getStock_quantity() - sale.getQuantity());
+        product.setStock_quantity(product.getStock_quantity() - sale.getQuantity());
         productDao.save(product);
+        if (product.getStock_quantity() - sale.getQuantity() <= product.getMin_quantity())
+            return new SuccessDataResult<Sale>(sale,"Minimum stock limit has reached.");
         return new SuccessDataResult<Sale>(sale);
     }
 
