@@ -34,7 +34,7 @@ public class PurchaseManager implements PurchaseService {
     public Result purchaseProduct(Purchase purchase) {
         purchaseDao.save(purchase);
         Product product = productDao.getById(purchase.getProduct().getId());
-        product.setStock_quantity(purchase.getProduct().getStock_quantity() + purchase.getQuantity());
+        product.setStock_quantity(product.getStock_quantity() + purchase.getQuantity());
         productDao.save(product);
         return new SuccessDataResult<Purchase>(purchase);
     }
