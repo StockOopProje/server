@@ -261,9 +261,7 @@ public class ProductManager implements ProductService {
         String type = product.getProduct_type();
 
         if(type.equals("Food")){
-            Food food = new Food();
-            food.setId(product.getId());
-            food.setProduct_type("Food");
+            Food food = foodDao.getById(product.getId());
             food.setName(product.getName());
             food.setMin_quantity(product.getMin_quantity());
             food.setStock_quantity(product.getStock_quantity());
@@ -277,9 +275,7 @@ public class ProductManager implements ProductService {
             return new SuccessDataResult<Food>(food);
         }
         else if(type.equals("Fashion")){
-            Fashion fashion = new Fashion();
-            fashion.setId(product.getId());
-            fashion.setProduct_type("Fashion");
+            Fashion fashion = fashionDao.getById(product.getId());
             fashion.setName(product.getName());
             fashion.setMin_quantity(product.getMin_quantity());
             fashion.setStock_quantity(product.getStock_quantity());
@@ -292,9 +288,7 @@ public class ProductManager implements ProductService {
             return new SuccessDataResult<Fashion>(fashion);
         }
         else if(type.equals("Book")){
-            Book book = new Book();
-            book.setId(product.getId());
-            book.setProduct_type("Book");
+            Book book = bookDao.getById(product.getId());
             book.setName(product.getName());
             book.setMin_quantity(product.getMin_quantity());
             book.setStock_quantity(product.getStock_quantity());
@@ -307,9 +301,7 @@ public class ProductManager implements ProductService {
             return new SuccessDataResult<Book>(book);
         }
         else if(type.equals("Electronic")){
-            Electronic electronic = new Electronic();
-            electronic.setId(product.getId());
-            electronic.setProduct_type("Electronic");
+            Electronic electronic = electronicDao.getById(product.getId());
             electronic.setName(product.getName());
             electronic.setMin_quantity(product.getMin_quantity());
             electronic.setStock_quantity(product.getStock_quantity());
@@ -322,9 +314,7 @@ public class ProductManager implements ProductService {
             return new SuccessDataResult<Electronic>(electronic);
         }
         else if(type.equals("Clothing")){
-            Clothing clothing = new Clothing();
-            clothing.setId(product.getId());
-            clothing.setProduct_type("Clothing");
+            Clothing clothing = clothingDao.getById(product.getId());
             clothing.setName(product.getName());
             clothing.setMin_quantity(product.getMin_quantity());
             clothing.setStock_quantity(product.getStock_quantity());
@@ -335,9 +325,7 @@ public class ProductManager implements ProductService {
             return new SuccessDataResult<Clothing>(clothing);
         }
         else if(type.equals("ShoeAccessory")){
-            ShoeAccessory shoeAccessory = new ShoeAccessory();
-            shoeAccessory.setId(product.getId());
-            shoeAccessory.setProduct_type("ShoeAccessory");
+            ShoeAccessory shoeAccessory = shoeAccessoryDao.getById(product.getId());
             shoeAccessory.setName(product.getName());
             shoeAccessory.setMin_quantity(product.getMin_quantity());
             shoeAccessory.setStock_quantity(product.getStock_quantity());
@@ -347,9 +335,7 @@ public class ProductManager implements ProductService {
             return new SuccessDataResult<ShoeAccessory>(shoeAccessory);
         }
         else if(type.equals("Other")){
-            Other other = new Other();
-            other.setId(product.getId());
-            other.setProduct_type("Other");
+            Other other = otherDao.getById(product.getId());
             other.setName(product.getName());
             other.setMin_quantity(product.getMin_quantity());
             other.setStock_quantity(product.getStock_quantity());
@@ -359,9 +345,7 @@ public class ProductManager implements ProductService {
             return new SuccessDataResult<Other>(other);
         }
         else if(type.equals("Furniture")){
-            Furniture furniture = new Furniture();
-            furniture.setId(product.getId());
-            furniture.setProduct_type("Furniture");
+            Furniture furniture = furnitureDao.getById(product.getId());
             furniture.setName(product.getName());
             furniture.setMin_quantity(product.getMin_quantity());
             furniture.setStock_quantity(product.getStock_quantity());
