@@ -25,4 +25,9 @@ public class PurchaseController {
     public Result purchaseProduct(@RequestBody Purchase purchase){
         return purchaseService.purchaseProduct(purchase);
     }
+
+    @PostMapping(path ="/deletePurchase")
+    public Result deletePurchase(@RequestBody Purchase purchase){
+        return purchaseService.deletePurchase(purchase);
+    }
 }

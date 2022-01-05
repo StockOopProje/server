@@ -25,4 +25,9 @@ public class SaleController {
     public Result saleProduct(@RequestBody Sale sale){
         return saleService.saleProduct(sale);
     }
+
+    @PostMapping(path="/deleteSale")
+    public Result deleteSale(@RequestBody Sale sale){
+        return saleService.deleteSale(sale);
+    }
 }

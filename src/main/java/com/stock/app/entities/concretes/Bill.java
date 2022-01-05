@@ -20,7 +20,7 @@ public class Bill {
 
     @ManyToOne
     private Product product;
-    private long quantity;
+    private int quantity;
     private Date date;
     private double price;
 

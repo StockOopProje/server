@@ -6,4 +6,5 @@ import com.stock.app.entities.concretes.Purchase;
 public interface PurchaseService {
     Result getAll();
     Result purchaseProduct(Purchase purchase);
+    Result deletePurchase(Purchase purchase);
 }
